@@ -1,0 +1,7 @@
+li{
+    list-style-type: none;
+}
+li:hover{
+    background-color: goldenrod;
+    padding: 30px;
+}
