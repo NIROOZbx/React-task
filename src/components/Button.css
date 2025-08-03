@@ -28,3 +28,15 @@
     display: flex;
     gap: 50px;
 }
+
+.first{
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+}
+.second{
+      height: 100px;
+    width: 100px;
+    background-color: rgb(12, 121, 121);
+
+}

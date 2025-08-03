@@ -1,13 +1,34 @@
+// import './Props.css'
+// function Child(props){
 
+// const welcome=<h1 className="welcome">Welcome {props.name}</h1> 
+// const error=<h1 className="error">No username info</h1>
+// console.log(props)
+    
+//  return props.isLoggedIn ? welcome: error
+ 
+// }
+
+// export default Child
+
+//--------------------------------------------------------------------------------------------------------------------------------------------//
+
+import { useState } from 'react'
+import './Props.css'
 function Child(props){
-    return(
-<>      
-<button onClick={props.onGreet}>Click me</button>
-<h1 style={props.isHuman ? { backgroundColor: "green" } : { backgroundColor: "yellow" }}>My name is {props.name} and my age is { props.age}
-         and my address is { props.place} and is human {props.isHuman?"Yes":"No"}</h1>
   
-     </>  
- )
+  const[bgColor,changeBackground]=useState(false)
+
+  const colorChange=()=>{
+    changeBackground(!bgColor)
+  }
+  const newList = props.updatedList.filter(ele => ele.year > 2020).map(ele => <li key={ele.id}>{ele.name.toUpperCase()}&nbsp;:&nbsp;{ele.model.toUpperCase()}&nbsp;:{ele.year}</li>);
+
+  return(<>
+    <h1 style={bgColor?{backgroundColor:"aqua",display:"flex"}:{backgroundColor:"lightblue",width:"fit-content"}}>{newList}</h1>
+    <button onClick={colorChange}>Change</button>
+    </>
+  )
 }
 
-export default Child
+export default Child    
